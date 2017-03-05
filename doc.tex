@@ -1,4 +1,4 @@
-\documentclass[]{article}
+\documentclass[10pt,a4paper,twocolumn]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -42,17 +42,25 @@
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \setcounter{secnumdepth}{0}
 
-\author{}
-\date{}
+
+\author{David Asabina}
+\date{\today}
+\title{Fundamentals of Structural Engineering}
 
 \begin{document}
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \maketitle
+    \include{abstract}
+  \end{@twocolumnfalse}
 
-{
-\hypersetup{linkcolor=black}
-\setcounter{tocdepth}{3}
-\tableofcontents
-}
+  { % toc
+  \hypersetup{linkcolor=black}
+  \setcounter{tocdepth}{3}
+  %\tableofcontents
+  }
 
-\include{intro}
+  \include{intro}
+]
 
 \end{document}
