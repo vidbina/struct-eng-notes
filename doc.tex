@@ -1,8 +1,9 @@
-\documentclass[10pt,a4paper,twocolumn]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
+\usepackage{multicol}
 \usepackage{fixltx2e} % provides \textsubscript
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -48,11 +49,8 @@
 \title{Fundamentals of Structural Engineering}
 
 \begin{document}
-\twocolumn[
-  \begin{@twocolumnfalse}
-    \maketitle
-    \include{abstract}
-  \end{@twocolumnfalse}
+  \maketitle
+  \input{abstract}
 
   { % toc
   \hypersetup{linkcolor=black}
@@ -60,7 +58,7 @@
   %\tableofcontents
   }
 
-  \include{intro}
-]
-
+  \begin{multicols}{2}
+    \input{intro}
+  \end{multicols}
 \end{document}
