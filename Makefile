@@ -1,4 +1,7 @@
-doc.pdf:
-	pdflatex doc.tex
+doc:
+	pdflatex doc
 
-.PHONY: doc.pdf
+clean:
+	rm -rf *.aux *.log *.out *.toc *.pdf
+
+.PHONY: doc.pdf clean
