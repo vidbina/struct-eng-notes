@@ -1,0 +1,41 @@
+\subsection{Wood Beams}
+
+\subsubsection{Flexular Stress}
+
+Considering wood as a fibre composite, the flexular strength may be defined as
+the stress on the surface of a specimen at a failure, accompanied by the
+fracturing of fibers
+\cite[chapter 7.2]{hodgikinson-mech-testing-fibre-composites}.
+
+For a bending moment $M$, a width of $b$ and a height of $h$ one may define
+the maximum normal stress $\sigma$ as presented in equation
+\ref{eq:max-normal-stress}.
+
+\begin{equation}\label{eq:max-normal-stress}
+\sigma = \frac{6M}{bh^2}
+\end{equation}
+
+With $F_s$ representing the shear force on the cross-section, the maximum shear
+stress is presented in equation \ref{eq:max-shear-stress}.
+
+\begin{equation}\label{eq:max-shear-stress}
+\tau = \frac{3F_s}{2bh}
+\end{equation}
+
+The allowable flexure stress $F'_b$ of wood is tabulated in catalogs, taken
+duration $C_D$, moisture $C_M$, beam stablity $C_L$, size $C_F$,
+flat use $C_{fu}$ and repetitive member $C_r$ factors into account to define
+the flexure as a function of those factors.
+
+\begin{equation}
+F'_{b} = F_b(\mathbf C)
+\end{equation}
+
+The actual flexure stress is on a wooden beam can be calculated by:
+
+\begin{equation}
+f_b = \frac{Mc}{I} = \frac{M}{S} \Biggm\lvert S = \frac{I}{c} = \frac{bd^2}{6}
+\end{equation}
+
+\subsubsection{Shear Stress}
+The allowable shear stress
