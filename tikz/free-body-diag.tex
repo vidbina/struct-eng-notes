@@ -1,0 +1,54 @@
+%\draw[help lines, step=0.5] (0, 0) grid (3,2);
+
+\pgfmathsetmacro\baseline{1};
+\pgfmathsetmacro\xA{0.5};
+\pgfmathsetmacro\xB{3-0.5};
+\pgfmathsetmacro\pinHeight{0.2};
+\pgfmathsetmacro\arrowLength{0.2};
+
+\draw (\xA, 1) to (\xB, 1);
+
+% triangles
+\draw
+  (\xA, \baseline) to
+  (\xA+\pinHeight/2, \baseline-\pinHeight) to
+  (\xA-\pinHeight/2, \baseline-\pinHeight) to
+  (\xA, \baseline);
+
+\draw
+  (\xB, \baseline) to
+  (\xB+\pinHeight/2, \baseline-\pinHeight) to
+  (\xB-\pinHeight/2, \baseline-\pinHeight) to
+  (\xB, \baseline);
+
+% force
+\draw [ -> ]
+  (\xA/2 + \xB/2, \baseline + \arrowLength + 1.5*\pinHeight)
+    node [above] {$F$} to
+  (\xA/2 + \xB/2, \baseline + 1.5*\pinHeight);
+
+% reactant forces
+\draw [ -> ]
+  (\xA, \baseline - \arrowLength - 1.5*\pinHeight)
+    node [below] {$R_a$} to
+  (\xA, \baseline - 1.5*\pinHeight);
+
+\draw [ -> ]
+  (\xB, \baseline - \arrowLength - 1.5*\pinHeight)
+    node [below] {$R_b$} to
+  (\xB, \baseline - 1.5*\pinHeight);
+
+% moments
+\draw [ -> ]
+  (\xA - 1.5*\pinHeight, \baseline - 1.5*\pinHeight)
+    to [out=-180, in=-90]
+  (\xA - 3*\pinHeight, \baseline) to [out=90, in=180]
+  (\xA - 1.5*\pinHeight, \baseline + 1.5*\pinHeight)
+    node [above] {$M_a$};
+
+\draw [ -> ]
+  (\xB + 1.5*\pinHeight, \baseline - 1.5*\pinHeight)
+    to [out=0, in=-90]
+  (\xB + 3*\pinHeight, \baseline) to [out=90, in=0]
+  (\xB + 1.5*\pinHeight, \baseline + 1.5*\pinHeight)
+    node [above] {$M_b$};
