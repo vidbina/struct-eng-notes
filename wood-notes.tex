@@ -1,11 +1,14 @@
-\subsection{Wood Beams}
+\subsection{Statics}
 
-\subsubsection{Flexular Stress}
+The moment of a force about a point $O$, is generally perceived as the
+tendency of force $\mathbf F$ to impart a moment of rotation unto a rigid
+body.
 
-Considering wood as a fibre composite, the flexular strength may be defined as
-the stress on the surface of a specimen at a failure, accompanied by the
-fracturing of fibers
-\cite[chapter 7.2]{hodgikinson-mech-testing-fibre-composites}.
+\begin{equation}
+  \mathbf M_O = \mathbf r \times \mathbf F
+\end{equation}
+
+For a system at equillibrium the sum of all forces and all sums will net zero.
 
 %\begin{figure}[h]
 \begin{tikzpicture}
@@ -13,6 +16,15 @@ fracturing of fibers
 \end{tikzpicture}
 %\caption{Information to the figure}
 %\end{figure}
+
+\cite{statics-and-mechs-of-materials}
+
+\subsubsection{Flexular Stress}
+
+Considering wood as a fibre composite, the flexular strength may be defined as
+the stress on the surface of a specimen at a failure, accompanied by the
+fracturing of fibers
+\cite[chapter 7.2]{hodgikinson-mech-testing-fibre-composites}.
 
 For a bending moment $M$, a width of $b$ and a height of $h$ one may define
 the maximum normal stress $\sigma$ as presented in equation
@@ -34,15 +46,26 @@ duration $C_D$, moisture $C_M$, beam stablity $C_L$, size $C_F$,
 flat use $C_{fu}$ and repetitive member $C_r$ factors into account to define
 the flexure as a function of those factors.
 
-\begin{equation}
+\begin{equation}\label{eq:allowable-flexture-stress}
 F'_{b} = F_b(\mathbf C)
 \end{equation}
 
 The actual flexure stress is on a wooden beam can be calculated by:
 
-\begin{equation}
+\begin{equation}\label{eq:actual-flexture-stress}
 f_b = \frac{Mc}{I} = \frac{M}{S} \Biggm\lvert S = \frac{I}{c} = \frac{bd^2}{6}
 \end{equation}
 
 \subsubsection{Shear Stress}
-The allowable shear stress
+
+The allowable shear stress $F'_v$ depends on load duration $C_D$ and moisture
+factors $C_M$.
+
+\begin{equation}\label{eq:allowable-shear-stress}
+F'_v = F_v(\mathbf C)
+\end{equation}
+
+The actual shear stres $f_v$ is:
+\begin{equation}\label{eq:actual-shear-stress}
+f_v =   \frac{VQ}{Ib} = \frac{1.5 V}{A}
+\end{equation}
