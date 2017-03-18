@@ -11,3 +11,38 @@ People of historic significance to the field:
 \item Euler 1707 - 1783 (angular momentum) $\mathbf H, \mathbf T = \frac{dH}{dt}$
 \item Lagrange 1788 energy, work -> equations of motion
 \end{itemize}
+
+\begin{tikzpicture}
+  \input{tikz/vibration-mass}
+\end{tikzpicture}
+
+
+\begin{itemize}
+  \item Describe the motion: establish a coordinate system. $x$ from $0$ springforce position
+  \item Apply physical laws: $\sum F_{external} = mx$
+\end{itemize}    
+
+\begin{itemize}
+  \item draw forces in direction in which they act
+  \item assume positive values for $x$, $\dot{x}$
+  \item deduce signs from direction of arrows
+      $f_s = x$
+      $f_d = b\dot{x}$
+\end{itemize}
+
+$\sum_x F = -f_s - f_d + m_g = -Kx - b\dot{x} + m_g = m\ddot{x}$ 
+
+\begin{tikzpicture}
+  \input{tikz/fbd}
+\end{tikzpicture}
+
+$E = KE + PE = \frac{1}{2}Kx^2+\frac{1}{2}m\dot{x}^2-m_g x$
+
+$\frac{dE}{dt}$ should be zero, since energy in system should be constant.
+
+$Kx\dot{x} + m\dot{x}\ddot{x} - m_g\dot{x} = 0$
+
+$m\ddot{x} =  Kx = m_g$
+
+\subsection{Kinematics: Reference Frame and Vectors}
+
