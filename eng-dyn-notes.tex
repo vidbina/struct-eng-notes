@@ -46,3 +46,40 @@ $m\ddot{x} =  Kx = m_g$
 
 \subsection{Kinematics: Reference Frame and Vectors}
 
+Notation: vector $\mathbf r_{A/O}$ is the vector originating at point $O$,
+towards point $A$.
+
+\begin{tikzpicture}
+\pgfmathsetmacro{\axlen}{3};
+  \coordinate (A) at (3, 1);
+  \coordinate (B) at (2, 2.5);
+  \draw [<->] (0, \axlen) to (0, 0) to (\axlen, 0);
+  %\fill (A) circle[radius=\axlen/30] node[right] {$A$};
+  %\fill (B) circle[radius=\axlen/30] node[right] {$B$};
+  \draw [->] (0, 0) to node[midway,below] {$r_{A/O}$} (A);
+  \draw [->] (0, 0) to node[midway,above] {$r_{B/O}$} (B);
+  \draw [->] (A) to node[midway,right] {$r_{B/A}$} (B);
+\end{tikzpicture}
+
+Assume $r_{B/O} = r_{A/O} + r_{B/A}$
+
+Derrivative of distance over time is velocity.
+
+$\frac{d\mathbf r_{B/O}}{dt} = v_{B/O} = v_{A/O} + v_{B/A}$
+
+Derrivative of velocity over time is acceleration.
+$\frac{d^2 \mathbf r_{B/O}}{dt^2} = a_{A/O} + a_{B/A}$
+
+Vector notes:
+
+$\frac{d(\mathbf a + b)}{dt} = \frac{d\mathbf a}{dt} + \frac{d \mathbf b}{dt}b$
+
+$d(f(t)\mathbf a) = \frac{df}{dt}\mathbf  a + \frac{d\mathbf a}{dt}\cdot f$
+
+$\mathbf r_{B/O} = r_{Bx}\hat I + r_{By}\hat J + r_{Bz}\hat K$
+
+$v_{B/O} = \frac{d}{dt}\mathbf r_{B/O} = \dot{r_{Bx}}\hat I +  \dot{r_{By}}\hat J +  \dot{r_{Bz}}\hat K$
+
+where $\hat I$, $\hat J$, $\hat K$ are unit vectors in a fixed reference frame.
+
+$\mathbf a_{B/O} = \frac{d}{dt} \mathbf v_{B/O} = \ddot{r}_{b_x} I + \ddot{r}_{By} J + \ddot{r}_{Bz} K$
