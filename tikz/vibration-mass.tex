@@ -1,0 +1,30 @@
+\pgfmathsetmacro{\top}{3};
+\pgfmathsetmacro{\groundres}{0.1};
+\pgfmathsetmacro{\groundlen}{2};
+\pgfmathsetmacro{\boxcenterline}{1};
+\pgfmathsetmacro{\boxheight}{0.5}
+
+% ground pattern
+\fill [pattern = north east lines] (0,\top) rectangle (\groundlen,\top+\groundres);
+
+% ground line
+\draw[thick] (0,\top) -- (\groundlen,\top);
+
+% spring
+\draw[decoration={aspect=0.3, segment length=1mm, amplitude=1mm,coil},decorate]
+  (\groundlen/3, \top) to
+  node[left] {K}
+  (\groundlen/3, \boxcenterline + \boxheight/2);
+
+\draw
+  (\groundlen*2/3, \top) to
+  node[right] {b}
+  (\groundlen*2/3, \boxcenterline + \boxheight/2);
+
+\draw (\groundlen/4, \boxcenterline + \boxheight/2)
+  rectangle (\groundlen*3/4, \boxcenterline - \boxheight/2)
+  node [pos=0.5] {M};
+
+\draw [<->] (\groundlen*5/4, 0) node[below] {y}
+  to (\groundlen*5/4, \top) node[above,left] {O}
+  to (\groundlen*5/4 + \top, \top) node[right] {x};
