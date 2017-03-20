@@ -8,7 +8,7 @@ People of historic significance to the field:
 \item Galileo 1610 - 1620
 \item Descartes 1630 1644 (kinematics) use kinematics to get to the direct method to get to the equation of motion
 \item Newton 1643 1727 (3 laws 1666)
-\item Euler 1707 - 1783 (angular momentum) $\mathbf H, \mathbf T = \frac{dH}{dt}$
+\item Euler 1707 - 1783 (angular momentum) $\vec{H}, \vec{T} = \frac{dH}{dt}$
 \item Lagrange 1788 energy, work -> equations of motion
 \end{itemize}
 
@@ -46,14 +46,28 @@ $m\ddot{x} =  Kx = m_g$
 
 \subsection{Kinematics: Reference Frame and Vectors}
 
-Notation: vector $\mathbf r_{A/O}$ is the vector originating at point $O$,
-towards point $A$.
+Derivates of sums of vectors or products involving vectors may be simplified as
+presented in equations \ref{eq:simplify-vec-sum} and
+\ref{eq:simplify-vec-prod}.
+
+\begin{equation}\label{eq:simplify-vec-sum}
+  \frac{d(\vec{a} + \vec{b})}{dt} = \frac{d\vec{a}}{dt} + \frac{d \vec{b}}{dt}
+\end{equation}
+
+\begin{equation}\label{eq:simplify-vec-prod}
+  d(f(t)\cdot\vec{a}) = \frac{d f(t)}{dt}\cdot\vec{a} + \frac{d\vec{a}}{dt}\cdot f(t)
+\end{equation}
+
+Henceforth, vector $\vec{r}_{A/O}$ represents the vector originating at point
+$O$, towards point $A$.
 
 \begin{tikzpicture}
 \pgfmathsetmacro{\axlen}{3};
   \coordinate (A) at (3, 1);
   \coordinate (B) at (2, 2.5);
-  \draw [<->] (0, \axlen) to (0, 0) to (\axlen, 0);
+  \draw [<->] (0, \axlen)
+    to node[midway, left] {$y$} (0, 0)
+    to node[midway, below] {$x$} (\axlen, 0);
   %\fill (A) circle[radius=\axlen/30] node[right] {$A$};
   %\fill (B) circle[radius=\axlen/30] node[right] {$B$};
   \draw [->] (0, 0) to node[midway,below] {$r_{A/O}$} (A);
@@ -61,25 +75,26 @@ towards point $A$.
   \draw [->] (A) to node[midway,right] {$r_{B/A}$} (B);
 \end{tikzpicture}
 
-Assume $r_{B/O} = r_{A/O} + r_{B/A}$
+With $\vec{r}_{B/O} = \vec{r}_{A/O} + \vec{r}_{B/A}$, the derivative of
+distance over time represents velocity while the derivative of velocity over
+time represents acceleration.
 
-Derrivative of distance over time is velocity.
+$$\frac{d\vec{r}_{B/O}}{dt} = \vec{v}_{B/O} = \vec{v}_{A/O} + \vec{v}_{B/A}$$
 
-$\frac{d\mathbf r_{B/O}}{dt} = v_{B/O} = v_{A/O} + v_{B/A}$
+$$\frac{d^2 \vec{r}_{B/O}}{dt^2} = \vec{a}_{A/O} + \vec{a}_{B/A}$$
 
-Derrivative of velocity over time is acceleration.
-$\frac{d^2 \mathbf r_{B/O}}{dt^2} = a_{A/O} + a_{B/A}$
+% $$\mathbf {\hat {u}} = {\frac {\mathbf {u} }{\|\mathbf {u} \|}}$$
 
-Vector notes:
+Any vector may be described in terms of its components. In the following
+example $\hat I$, $\hat J$ and $\hat K$ are unit vectors in a fixed reference
+frame.
 
-$\frac{d(\mathbf a + b)}{dt} = \frac{d\mathbf a}{dt} + \frac{d \mathbf b}{dt}b$
+$$\vec{r}_{B/O} = r_{Bx}\hat I + r_{By}\hat J + r_{Bz}\hat K$$
 
-$d(f(t)\mathbf a) = \frac{df}{dt}\mathbf  a + \frac{d\mathbf a}{dt}\cdot f$
+The derivative of such a decomposed vector will follow the derivation rule
+demonstrated in equation \ref{eq:simplify-vec-sum}.
 
-$\mathbf r_{B/O} = r_{Bx}\hat I + r_{By}\hat J + r_{Bz}\hat K$
+$$v_{B/O} = \frac{d}{dt}\vec{r}_{B/O} = \dot{r_{Bx}}\hat I +  \dot{r_{By}}\hat J +  \dot{r_{Bz}}\hat K$$
 
-$v_{B/O} = \frac{d}{dt}\mathbf r_{B/O} = \dot{r_{Bx}}\hat I +  \dot{r_{By}}\hat J +  \dot{r_{Bz}}\hat K$
 
-where $\hat I$, $\hat J$, $\hat K$ are unit vectors in a fixed reference frame.
-
-$\mathbf a_{B/O} = \frac{d}{dt} \mathbf v_{B/O} = \ddot{r}_{b_x} I + \ddot{r}_{By} J + \ddot{r}_{Bz} K$
+$$\vec{a}_{B/O} = \frac{d}{dt} \vec{v}_{B/O} = \ddot{r}_{b_x} I + \ddot{r}_{By} J + \ddot{r}_{Bz} K$$
